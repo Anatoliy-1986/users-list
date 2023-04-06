@@ -1,11 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { UsersList } from "./components/UsersList";
 import { ErrorPage } from "./components/ErrorPage";
 import { UserCreation } from "./components/UserCreation";
+import { store } from "./store/store";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,10 @@ const router = createBrowserRouter([
     path: "contacts/:contactId",
     element: <UserCreation />,
   },
+  {
+    path: "contacts/newUser",
+    element: <UserCreation />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(
@@ -24,7 +30,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 

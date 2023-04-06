@@ -1,9 +1,16 @@
-import React from "react";
+import React, { BaseSyntheticEvent, useEffect, useState } from "react";
 
 import Multiselect from "multiselect-react-dropdown";
 
 import styles from "./UserCreation.module.scss";
 import { Link } from "react-router-dom";
+import {
+  useCreateUsersMutation,
+  useDeleteUserMutation,
+  useGetUsersQuery,
+  useUpdateUsersMutation,
+} from "../../store/users/users.api";
+import { IUsers } from "../../store/users/users.type";
 
 const optionList = {
   options: [
@@ -24,6 +31,40 @@ const roleList = {
 };
 
 export const UserCreation = () => {
+  const { data } = useGetUsersQuery(3);
+  const [deleteUser] = useDeleteUserMutation();
+  const [updateUser] = useUpdateUsersMutation();
+  const [createUser] = useCreateUsersMutation();
+
+  const handleRemove = (user: IUsers) => {
+    deleteUser(user);
+  };
+
+  const handleUpdate = (user: IUsers) => {
+    updateUser(user);
+  };
+
+  const handleCreate = (user: IUsers) => {
+    createUser(user);
+  };
+
+  const [isUser, setIsUser] = useState<IUsers>({
+    id: 0,
+    userName: "",
+    firstName: "",
+    lastName: "",
+  });
+
+  useEffect(() => {
+    const href = Number(window.location.href.split("/").pop());
+    if (!isNaN(href)) {
+      const user = data?.filter((item) => item.id === Number(href));
+      if (user) {
+        setIsUser(() => user[0]);
+      }
+    }
+  }, []);
+
   return (
     <section className={styles.root}>
       <Link to={`/`}>Back to users list</Link>
@@ -38,6 +79,10 @@ export const UserCreation = () => {
             placeholder="Username"
             aria-label="Username"
             id="Username"
+            value={isUser.userName}
+            onChange={(evt: BaseSyntheticEvent) =>
+              setIsUser({ ...isUser, userName: evt.target.value })
+            }
           />
         </div>
         <div className="mb-3">
@@ -50,6 +95,10 @@ export const UserCreation = () => {
             placeholder="First Name"
             aria-label="First Name"
             id="FirstName"
+            value={isUser.firstName}
+            onChange={(evt: BaseSyntheticEvent) =>
+              setIsUser({ ...isUser, firstName: evt.target.value })
+            }
           />
         </div>
         <div className="mb-3">
@@ -62,6 +111,10 @@ export const UserCreation = () => {
             placeholder="Last Name"
             aria-label="Last Name"
             id="LastName"
+            value={isUser.lastName}
+            onChange={(evt: BaseSyntheticEvent) =>
+              setIsUser({ ...isUser, lastName: evt.target.value })
+            }
           />
         </div>
         <div className="mb-3">
@@ -94,8 +147,18 @@ export const UserCreation = () => {
             },
           }}
         />
-        <button type="submit" className="btn btn-primary">
+        <button
+          type="button"
+          className="btn btn-primary"
+          onClick={() => handleCreate(isUser)}
+        >
           Создать пользователя
+        </button>
+        <button type="button" onClick={() => handleRemove(isUser)}>
+          remove
+        </button>
+        <button type="button" onClick={() => handleUpdate(isUser)}>
+          update
         </button>
       </form>
     </section>

@@ -7,6 +7,16 @@
   align-items: center;
 }
 
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 .list {
   list-style: none;
   padding: 20px 0 0;

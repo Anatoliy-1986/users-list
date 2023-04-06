@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "userName": "Dian",
+      "firstName": "Анна",
+      "lastName": "Иванова1"
+    },
+    {
+      "id": 3,
+      "userName": "John",
+      "firstName": "Иван",
+      "lastName": "Степанов"
+    },
+    {
+      "id": 20,
+      "userName": "Alex1",
+      "firstName": "Алексей1",
+      "lastName": "Федотов1"
+    },
+    {
+      "id": 21,
+      "userName": "Iggy",
+      "firstName": "Стас",
+      "lastName": "Дибров"
+    }
+  ]
+}
