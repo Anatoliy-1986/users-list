@@ -1,0 +1,17 @@
+.root {
+  margin: 20px auto;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputWrapper {
+  width: 100%;
+}
+
+.select {
+  width: 100% !important;
+  height: 30px;
+}
