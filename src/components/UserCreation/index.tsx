@@ -3,6 +3,7 @@ import React from "react";
 import Multiselect from "multiselect-react-dropdown";
 
 import styles from "./UserCreation.module.scss";
+import { Link } from "react-router-dom";
 
 const optionList = {
   options: [
@@ -25,6 +26,7 @@ const roleList = {
 export const UserCreation = () => {
   return (
     <section className={styles.root}>
+      <Link to={`/`}>Back to users list</Link>
       <form className={styles.inputWrapper} method="post">
         <div className="mb-3">
           <label htmlFor="Username" className="form-label">
