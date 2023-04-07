@@ -2,9 +2,10 @@
   "users": [
     {
       "id": 2,
-      "userName": "Dian",
+      "userName": "Dian11456",
       "firstName": "Анна",
-      "lastName": "Иванова1"
+      "lastName": "Иванова190",
+      "password": "122334"
     },
     {
       "id": 3,
@@ -23,6 +24,20 @@
       "userName": "Iggy",
       "firstName": "Стас",
       "lastName": "Дибров"
+    },
+    {
+      "userName": "Dian1",
+      "firstName": "andrei",
+      "lastName": "Иванова11",
+      "password": "122334",
+      "roles": [
+        {
+          "value": "ANT",
+          "name": "Рабочий"
+        }
+      ],
+      "workBorders": [],
+      "id": 22
     }
   ]
 }

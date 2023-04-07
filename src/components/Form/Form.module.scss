@@ -1,0 +1,16 @@
+.inputsWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonsWrapper {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px;
+}

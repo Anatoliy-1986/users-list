@@ -9,7 +9,7 @@ import { useGetUsersQuery } from "../../store/users/users.api";
 
 export const UsersList = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { data, isLoading, error } = useGetUsersQuery(3);
+  const { data, isLoading, error } = useGetUsersQuery();
 
   const [users, setUsers] = useState(data);
 
@@ -34,7 +34,7 @@ export const UsersList = () => {
             value={searchValue}
           />
         </form>
-        <Link to={`contacts/newUser`}>
+        <Link to={`contacts/create`}>
           <button className="btn btn-primary">Создать пользователя</button>
         </Link>
       </header>
