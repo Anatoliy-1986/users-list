@@ -7,6 +7,7 @@ import styles from "./CreatePage.module.scss";
 import { UserForm } from "../../components/Form/Form";
 import { useCreateUsersMutation } from "../../store/users/users.api";
 import { IUsers } from "../../store/users/users.type";
+import { rolesOptions } from "../Form/dictionaries";
 
 export const UserCreateComponent = () => {
   const [createUser] = useCreateUsersMutation();
@@ -23,7 +24,7 @@ export const UserCreateComponent = () => {
     firstName: "",
     lastName: "",
     password: "",
-    roles: [],
+    roles: [rolesOptions[0]],
     workBorders: [],
   };
 

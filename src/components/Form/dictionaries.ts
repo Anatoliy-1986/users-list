@@ -5,8 +5,6 @@ export const rolesOptions = [
   { value: "DEVELOPER", name: "Разаработчик" },
 ];
 
-export const defaultValue = [{ value: "ANT", name: "Рабочий" }];
-
 export const workBordersOptions = [
   { id: "1", name: "Белгатой" },
   { id: "2", name: "Шали" },

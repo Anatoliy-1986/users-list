@@ -59,9 +59,7 @@ export const UserForm = ({
             </div>
             <Multiselect
               options={rolesOptions}
-              selectedValues={
-                values.roles.length ? values.roles : [rolesOptions[0]]
-              }
+              selectedValues={values.roles.length && values.roles}
               onSelect={(selectedList) => {
                 setFieldValue("roles", selectedList);
               }}
