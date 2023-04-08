@@ -4,6 +4,11 @@ export interface IUsers {
   firstName: string;
   lastName: string;
   password: string;
-  roles: string[];
-  workBorders: string[];
+  roles: Option[];
+  workBorders: Option[];
+}
+
+export interface Option {
+  value: string;
+  name: string;
 }

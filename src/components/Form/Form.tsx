@@ -1,17 +1,10 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import { SignupSchema } from "./schemsValidation";
-import { IUsers } from "../../store/users/users.type";
 import Multiselect from "multiselect-react-dropdown";
-import { optionList, roleList } from "./dictionaries";
+import { defaultValue, rolesOptions, workBordersOptions } from "./dictionaries";
 import styles from "./Form.module.scss";
-
-interface IForm {
-  initialValues: IUsers;
-  onCreate?: (params: IUsers) => void;
-  onRemove?: () => void;
-  onUpdate?: (params: IUsers) => void;
-}
+import { IForm } from "../types";
 
 export const UserForm = ({
   initialValues,
@@ -25,13 +18,11 @@ export const UserForm = ({
         initialValues={initialValues}
         validationSchema={SignupSchema}
         onSubmit={(values) => {
-          // same shape as initial values
-          console.log(values);
           !!onCreate && onCreate(values);
           !!onUpdate && onUpdate(values);
         }}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, setFieldValue, values }) => (
           <Form>
             <div className={styles.inputsWrapper}>
               <label className={styles.label}>
@@ -67,8 +58,14 @@ export const UserForm = ({
               ) : null}
             </div>
             <Multiselect
-              options={roleList.options}
-              selectedValues={roleList.selectedValue}
+              options={rolesOptions}
+              selectedValues={values.roles.length ? values.roles : defaultValue}
+              onSelect={(selectedList) => {
+                setFieldValue("roles", selectedList);
+              }}
+              onRemove={(selectedList) => {
+                setFieldValue("roles", selectedList);
+              }}
               displayValue="name"
               placeholder="Role"
               style={{
@@ -79,8 +76,18 @@ export const UserForm = ({
                 },
               }}
             />
+            {errors.roles && touched.roles ? (
+              <div className={styles.error}>{String(errors.roles)}</div>
+            ) : null}
             <Multiselect
-              options={optionList.options}
+              options={workBordersOptions}
+              selectedValues={values.workBorders.length && values.workBorders}
+              onSelect={(selectedList) => {
+                setFieldValue("workBorders", selectedList);
+              }}
+              onRemove={(selectedList) => {
+                setFieldValue("workBorders", selectedList);
+              }}
               displayValue="name"
               placeholder="Work Borders"
               style={{
@@ -90,6 +97,9 @@ export const UserForm = ({
                 },
               }}
             />
+            {errors.workBorders && touched.workBorders ? (
+              <div className={styles.error}>{String(errors.workBorders)}</div>
+            ) : null}
             <div className={styles.buttonsWrapper}>
               <button type="submit" className="btn btn-primary">
                 {onUpdate
