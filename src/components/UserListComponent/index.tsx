@@ -10,7 +10,6 @@ import { useGetUsersQuery } from "../../store/users/users.api";
 export const UserListComponent = () => {
   const [searchValue, setSearchValue] = useState("");
   const { data, isLoading, error } = useGetUsersQuery();
-
   const [users, setUsers] = useState(data);
 
   useEffect(() => {
@@ -23,13 +22,11 @@ export const UserListComponent = () => {
   return (
     <section className={styles.root}>
       <header className={styles.header}>
-        <form id="search-form" role="search">
+        <form role="search">
           <input
-            id="q"
             aria-label="Search contacts"
             placeholder="Поиск"
             type="search"
-            name="q"
             onChange={(e) => setSearchValue(e.target.value)}
             value={searchValue}
           />
@@ -39,7 +36,7 @@ export const UserListComponent = () => {
         </Link>
       </header>
       {isLoading ? (
-        <div className={styles.loader}>Loading...</div>
+        <div className={styles.loader} />
       ) : error ? (
         <div>Ошибка</div>
       ) : (

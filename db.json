@@ -10,20 +10,12 @@
         {
           "value": "ANT_MANAGER",
           "name": "Менеджер"
-        },
-        {
-          "value": "ANT_OFFICER",
-          "name": "Офицер"
         }
       ],
       "workBorders": [
         {
           "id": "1",
           "name": "Белгатой"
-        },
-        {
-          "id": "2",
-          "name": "Шали"
         }
       ]
     },
@@ -59,7 +51,16 @@
       "firstName": "andrei",
       "lastName": "Иванова190",
       "password": "олиолриорол",
-      "roles": [],
+      "roles": [
+        {
+          "value": "ANT",
+          "name": "Рабочий"
+        },
+        {
+          "value": "ANT_MANAGER",
+          "name": "Менеджер"
+        }
+      ],
       "workBorders": [
         {
           "id": "2",
@@ -71,6 +72,29 @@
         }
       ],
       "id": 25
+    },
+    {
+      "userName": "Dian1",
+      "firstName": "Иван",
+      "lastName": "Иванова11",
+      "password": "2342423424",
+      "roles": [
+        {
+          "value": "ANT",
+          "name": "Рабочий"
+        },
+        {
+          "value": "ANT_MANAGER",
+          "name": "Менеджер"
+        }
+      ],
+      "workBorders": [
+        {
+          "id": "1",
+          "name": "Белгатой"
+        }
+      ],
+      "id": 26
     }
   ]
 }

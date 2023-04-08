@@ -1,3 +1,9 @@
+.root {
+  padding: 0 20px;
+  min-width: 375px;
+  max-width: 400px;
+}
+
 .inputsWrapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -19,4 +25,10 @@
   color: red;
   font-size: 12px;
   margin-top: -10px;
+}
+
+.errorMultiselect {
+  color: red;
+  font-size: 12px;
+  margin: -20px 0 20px;
 }

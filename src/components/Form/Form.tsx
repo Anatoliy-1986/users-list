@@ -2,7 +2,7 @@ import React from "react";
 import { Formik, Form, Field } from "formik";
 import { SignupSchema } from "./schemsValidation";
 import Multiselect from "multiselect-react-dropdown";
-import { defaultValue, rolesOptions, workBordersOptions } from "./dictionaries";
+import { rolesOptions, workBordersOptions } from "./dictionaries";
 import styles from "./Form.module.scss";
 import { IForm } from "../types";
 
@@ -13,7 +13,7 @@ export const UserForm = ({
   onUpdate,
 }: IForm) => {
   return (
-    <div>
+    <div className={styles.root}>
       <Formik
         initialValues={initialValues}
         validationSchema={SignupSchema}
@@ -51,7 +51,7 @@ export const UserForm = ({
 
               <label className={styles.label}>
                 Пароль
-                <Field name="password" />
+                <Field type="password" name="password" />
               </label>
               {errors.password && touched.password ? (
                 <div className={styles.error}>{errors.password}</div>
@@ -59,7 +59,9 @@ export const UserForm = ({
             </div>
             <Multiselect
               options={rolesOptions}
-              selectedValues={values.roles.length ? values.roles : defaultValue}
+              selectedValues={
+                values.roles.length ? values.roles : [rolesOptions[0]]
+              }
               onSelect={(selectedList) => {
                 setFieldValue("roles", selectedList);
               }}
@@ -67,7 +69,8 @@ export const UserForm = ({
                 setFieldValue("roles", selectedList);
               }}
               displayValue="name"
-              placeholder="Role"
+              placeholder="Должность"
+              emptyRecordMsg="Нет доступных должностей"
               style={{
                 multiselectContainer: {
                   background: "white",
@@ -77,7 +80,9 @@ export const UserForm = ({
               }}
             />
             {errors.roles && touched.roles ? (
-              <div className={styles.error}>{String(errors.roles)}</div>
+              <div className={styles.errorMultiselect}>
+                {String(errors.roles)}
+              </div>
             ) : null}
             <Multiselect
               options={workBordersOptions}
@@ -90,6 +95,7 @@ export const UserForm = ({
               }}
               displayValue="name"
               placeholder="Work Borders"
+              emptyRecordMsg="Нет доступных должностей Work Borders"
               style={{
                 multiselectContainer: {
                   background: "white",
@@ -98,7 +104,9 @@ export const UserForm = ({
               }}
             />
             {errors.workBorders && touched.workBorders ? (
-              <div className={styles.error}>{String(errors.workBorders)}</div>
+              <div className={styles.errorMultiselect}>
+                {String(errors.workBorders)}
+              </div>
             ) : null}
             <div className={styles.buttonsWrapper}>
               <button type="submit" className="btn btn-primary">
