@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -29,16 +29,19 @@ export const UserUpdateComponent = () => {
   const handleUpdate = (user: IUsers) => {
     updateUser(user);
     navigate("/");
+    console.log("пользователь успешно обновлен");
   };
 
-  return (
+  return data ? (
     <section className={styles.root}>
       <Link to={`/`}>Вернуться к списку</Link>
       <UserForm
-        initialValues={data!}
+        initialValues={data}
         onRemove={handleRemove}
         onUpdate={handleUpdate}
       />
     </section>
+  ) : (
+    <Fragment />
   );
 };

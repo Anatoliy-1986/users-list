@@ -3,7 +3,7 @@
     {
       "id": 2,
       "userName": "Dian114567",
-      "firstName": "Анна",
+      "firstName": "Анна135",
       "lastName": "Иванова190",
       "password": "122334"
     },
@@ -26,45 +26,13 @@
       "lastName": "Дибров"
     },
     {
-      "userName": "Dian1",
-      "firstName": "andrei",
-      "lastName": "Иванова11",
-      "password": "122334",
-      "roles": [
-        {
-          "value": "ANT",
-          "name": "Рабочий"
-        }
-      ],
+      "userName": "енапрпспр",
+      "firstName": "лоролриорл",
+      "lastName": "ирилроирор",
+      "password": "лололплгл",
+      "roles": [],
       "workBorders": [],
       "id": 22
-    },
-    {
-      "userName": "erweer",
-      "firstName": "yutuytu",
-      "lastName": "tyttu",
-      "password": "gjhgj",
-      "roles": [],
-      "workBorders": [],
-      "id": 23
-    },
-    {
-      "userName": "yuuyui",
-      "firstName": "gghjghj",
-      "lastName": "jhkjjkhjk",
-      "password": "jhhhukjhkjhk",
-      "roles": [],
-      "workBorders": [],
-      "id": 24
-    },
-    {
-      "userName": "Dian1",
-      "firstName": "Иван",
-      "lastName": "Иванова11",
-      "password": "nbhjbhjb",
-      "roles": [],
-      "workBorders": [],
-      "id": 25
     }
   ]
 }

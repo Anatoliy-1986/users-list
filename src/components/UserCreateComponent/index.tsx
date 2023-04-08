@@ -15,6 +15,7 @@ export const UserCreateComponent = () => {
   const handleCreate = (user: IUsers) => {
     createUser(user);
     navigate("/");
+    console.log("пользователь успешно добавлен");
   };
 
   const data = {
