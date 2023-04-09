@@ -2,7 +2,7 @@
   "users": [
     {
       "id": 2,
-      "userName": "John1p91",
+      "userName": "John1p9134",
       "firstName": "Анна135",
       "lastName": "Иванова190",
       "password": "1223340",
@@ -10,12 +10,24 @@
         {
           "value": "ANT_MANAGER",
           "name": "Менеджер"
+        },
+        {
+          "value": "ANT_OFFICER",
+          "name": "Офицер"
+        },
+        {
+          "value": "ANT",
+          "name": "Рабочий"
         }
       ],
       "workBorders": [
         {
           "id": "1",
           "name": "Белгатой"
+        },
+        {
+          "id": "2",
+          "name": "Шали"
         }
       ]
     },
@@ -95,33 +107,6 @@
         }
       ],
       "id": 26
-    },
-    {
-      "userName": "Dian1",
-      "firstName": "Иван",
-      "lastName": "Иванова11",
-      "password": "78978789",
-      "roles": [
-        {
-          "value": "ANT",
-          "name": "Рабочий"
-        },
-        {
-          "value": "ANT_MANAGER",
-          "name": "Менеджер"
-        }
-      ],
-      "workBorders": [
-        {
-          "id": "1",
-          "name": "Белгатой"
-        },
-        {
-          "id": "2",
-          "name": "Шали"
-        }
-      ],
-      "id": 27
     }
   ]
 }

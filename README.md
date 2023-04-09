@@ -8,4 +8,4 @@
 
 ### Запуск сервера
 
-### `npx json-server db.json --port 3200`
+### `npm run server`

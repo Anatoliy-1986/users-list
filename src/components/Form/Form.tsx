@@ -58,6 +58,7 @@ export const UserForm = ({
               ) : null}
             </div>
             <Multiselect
+              id="roles"
               options={rolesOptions}
               selectedValues={values.roles.length && values.roles}
               onSelect={(selectedList) => {
@@ -83,6 +84,7 @@ export const UserForm = ({
               </div>
             ) : null}
             <Multiselect
+              id="workBorders"
               options={workBordersOptions}
               selectedValues={values.workBorders.length && values.workBorders}
               onSelect={(selectedList) => {

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start:server": "npx json-server db.json --port 3200",
+    "server": "npx json-server db.json --port 3200",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -14,6 +14,7 @@
     "bootstrap": "^5.2.3",
     "clsx": "^1.2.1",
     "formik": "^2.2.9",
+    "include-media": "^2.0.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
     "multiselect-react-dropdown": "^2.0.25",
