@@ -16,13 +16,13 @@ export const SignupSchema = Yup.object().shape({
     .required("Введите пароль"),
   roles: Yup.mixed().test(
     "roles",
-    "выбирите не менее одного варианта",
+    "Выберите не менее одного варианта",
     (value) => {
       return !!value && (value as Option[]).length > 0;
     }
   ),
   workBorders: Yup.array()
-    .min(1, "выбирите не менее одного варианта")
+    .min(1, "Выберите не менее одного варианта")
     .of(Yup.object().required())
     .required(),
 });
