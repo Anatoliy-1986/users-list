@@ -1,38 +1,7 @@
 {
   "users": [
     {
-      "id": 2,
-      "userName": "John1p9134",
-      "firstName": "Анна135",
-      "lastName": "Иванова190",
-      "password": "1223340",
-      "roles": [
-        {
-          "value": "ANT_MANAGER",
-          "name": "Менеджер"
-        },
-        {
-          "value": "ANT_OFFICER",
-          "name": "Офицер"
-        },
-        {
-          "value": "ANT",
-          "name": "Рабочий"
-        }
-      ],
-      "workBorders": [
-        {
-          "id": "1",
-          "name": "Белгатой"
-        },
-        {
-          "id": "2",
-          "name": "Шали"
-        }
-      ]
-    },
-    {
-      "userName": "Dian1",
+      "userName": "Dian1567",
       "firstName": "andrei",
       "lastName": "Иванова11",
       "password": "00000",
@@ -59,25 +28,17 @@
       "id": 24
     },
     {
-      "userName": "Dian1",
-      "firstName": "andrei",
-      "lastName": "Иванова190",
-      "password": "олиолриорол",
+      "userName": "гнегшгнгш",
+      "firstName": "ролрлрол",
+      "lastName": "ьбтьол",
+      "password": "767685786567",
       "roles": [
         {
           "value": "ANT",
           "name": "Рабочий"
-        },
-        {
-          "value": "ANT_MANAGER",
-          "name": "Менеджер"
         }
       ],
       "workBorders": [
-        {
-          "id": "2",
-          "name": "Шали"
-        },
         {
           "id": "1",
           "name": "Белгатой"
@@ -89,15 +50,11 @@
       "userName": "Dian1",
       "firstName": "Иван",
       "lastName": "Иванова11",
-      "password": "2342423424",
+      "password": "576576567",
       "roles": [
         {
           "value": "ANT",
           "name": "Рабочий"
-        },
-        {
-          "value": "ANT_MANAGER",
-          "name": "Менеджер"
         }
       ],
       "workBorders": [

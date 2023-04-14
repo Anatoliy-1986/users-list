@@ -6,9 +6,11 @@ import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { UsersList } from "./pages/UsersListPage";
 import { ErrorPage } from "./pages/ErrorPage";
-import { store } from "./store/store";
+import { setupStore } from "./store/store";
 import { CreatePage } from "./pages/CreatePage";
 import { UpdatePage } from "./pages/UpdatePage";
+
+const store = setupStore();
 
 const router = createBrowserRouter([
   {

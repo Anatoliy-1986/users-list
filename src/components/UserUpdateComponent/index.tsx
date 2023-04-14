@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 
 import { Link, useNavigate, useParams } from "react-router-dom";
 
@@ -6,42 +6,48 @@ import styles from "./UpdatePage.module.scss";
 
 import { UserForm } from "../../components/Form/Form";
 
-import {
-  useDeleteUserMutation,
-  useGetUserQuery,
-  useUpdateUsersMutation,
-} from "../../store/users/users.api";
 import { IUsers } from "../../store/users/users.type";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import {
+  getUserById,
+  removeUser,
+  updateUser,
+} from "../../store/reducers/ActionCreator";
 
 export const UserUpdateComponent = () => {
-  const [deleteUser] = useDeleteUserMutation();
-  const [updateUser] = useUpdateUsersMutation();
   const navigate = useNavigate();
   const { id } = useParams();
 
-  const { data } = useGetUserQuery(String(id));
+  const dispatch = useAppDispatch();
+  const { user } = useAppSelector((state) => state.userReducer);
+
+  useEffect(() => {
+    dispatch(getUserById(String(id)));
+  }, []);
 
   const handleRemove = () => {
-    deleteUser(String(id));
+    dispatch(removeUser(String(id)));
     navigate("/");
   };
 
   const handleUpdate = (user: IUsers) => {
-    updateUser(user);
+    dispatch(updateUser(user));
     navigate("/");
     console.log("пользователь успешно обновлен");
   };
 
-  return data ? (
+  return (
     <section className={styles.root}>
       <Link to={`/`}>Вернуться к списку</Link>
-      <UserForm
-        initialValues={data}
-        onRemove={handleRemove}
-        onUpdate={handleUpdate}
-      />
+      {user ? (
+        <UserForm
+          initialValues={user}
+          onRemove={handleRemove}
+          onUpdate={handleUpdate}
+        />
+      ) : (
+        <Fragment />
+      )}
     </section>
-  ) : (
-    <Fragment />
   );
 };
